@@ -160,8 +160,26 @@ header.scrolled{background:rgba(245,240,232,.94);backdrop-filter:blur(8px);paddi
 .hte .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
 .btn-light{border-color:var(--linen);color:var(--white)}
 .btn-light:hover{background:var(--white);color:var(--ink)}
-.zf-wrap iframe{width:100%;height:1500px;border:0;background:var(--white);display:block}
-.zf-wrap .fine{margin-top:12px;font-size:.78rem;color:var(--driftwood)}
+form.lead{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
+form.lead .full,form.lead fieldset{grid-column:1/-1}
+form.lead label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--driftwood);display:block}
+form.lead input,form.lead select,form.lead textarea{display:block;width:100%;margin-top:6px;font:300 1rem var(--sans);letter-spacing:0;text-transform:none;padding:12px 0;border:0;border-bottom:1px solid var(--driftwood);background:transparent;color:var(--ink);outline:none;border-radius:0}
+form.lead input:focus,form.lead select:focus,form.lead textarea:focus{border-color:var(--ink)}
+form.lead [aria-invalid]{border-color:#8a3b2b}
+form.lead textarea{min-height:110px;resize:vertical}
+form.lead fieldset{border:0}
+form.lead legend{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--driftwood);margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+form.lead .chips label{position:relative;letter-spacing:0;text-transform:none;font-size:.9rem;color:var(--ink)}
+form.lead .chips input{position:absolute;inset:0;opacity:0;width:1px;height:1px;margin:0;padding:0}
+.chips span{display:inline-block;padding:8px 14px;border:1px solid var(--stone);cursor:pointer;transition:.2s}
+.chips input:checked+span{background:var(--ink);border-color:var(--ink);color:var(--white)}
+.chips input:focus-visible+span{outline:2px solid var(--ocean);outline-offset:2px}
+form.lead .err{display:block;margin-top:4px;font-size:.78rem;letter-spacing:0;text-transform:none;color:#8a3b2b}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-note{grid-column:1/-1;font-size:.9rem;color:var(--ocean);min-height:1.2em}
+.fine{grid-column:1/-1;font-size:.78rem;color:var(--driftwood)}
+.thanks h2{margin-bottom:.4rem}
 
 /* Process */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;margin-top:50px}
@@ -187,7 +205,6 @@ details p{margin-top:12px;color:#4a5659}
 
 /* Contact */
 .contact{background:var(--linen)}
-.contact .info{position:sticky;top:110px}
 .info p{margin-bottom:18px}
 .info a{border-bottom:1px solid var(--stone)}
 
@@ -216,7 +233,7 @@ footer .logo{color:var(--white)}
   .nav ul.open{display:flex}
   .nav ul li{padding:12px 0;border-bottom:1px solid var(--linen)}
   .menu-btn{display:block}
-  .grid,.steps,.gallery,.svc{grid-template-columns:1fr}
+  .grid,.steps,.gallery,.svc,form.lead{grid-template-columns:1fr}
   .gallery figure{aspect-ratio:4/3}
   .feature{height:60vh}
   .window-ctrl{right:10px;bottom:10px}
@@ -404,13 +421,46 @@ footer .logo{color:var(--white)}
       <p><a href="tel:+16314461000">631.446.1000</a><br><a href="mailto:sales@hteny.com">sales@hteny.com</a></p>
       <p><strong style="font-weight:500">HTE Southampton Showroom</strong><br>241 County Rd 39A, Unit 4<br>Southampton, NY 11968</p>
     </div>
-    <!-- Embeds Zoho Forms "HTE - Contact Form" (the form hteny.com uses), which feeds HTE's Zoho CRM.
-         Motorized Shades is pre-checked; Zoho records this page as the Referrer Name. -->
-    <div class="zf-wrap reveal">
-      <iframe id="zf" title="Request a consultation" loading="lazy" allow="camera"
-        src="https://forms.hteny.com/hometechnologyexperts/form/HamptonsLandscapeLightingTest/formperma/-jlCFyBaD3U-sW74GbcQn5gCA2FRJU-vaFKjUEWvg5s?zf_rszfm=1&amp;Checkbox=Motorized%20Shades"></iframe>
+    <!-- Same form and lead service as the HLD site: posts JSON to the Catalyst lead_intake
+         function, which checks the trap field, fill time and Turnstile, then creates the CRM lead. -->
+    <form class="lead reveal" novalidate data-brand="HMS"
+      data-endpoint="https://hld-site-911738542.development.catalystserverless.com/server/lead_intake/submit"
+      data-sitekey="0x4AAAAAADlO-eoHJGDm1U7H">
+      <label>First name<input name="first_name" autocomplete="given-name" required></label>
+      <label>Last name<input name="last_name" autocomplete="family-name" required></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+      <label class="full">Where is the home?<select name="location"><option>The Hamptons</option><option>Manhattan</option><option>Elsewhere in New York</option><option>Somewhere else</option></select></label>
+      <fieldset><legend>I am</legend>
+        <div class="chips">
+          <label><input type="radio" name="role" value="Homeowner" checked><span>A homeowner</span></label>
+          <label><input type="radio" name="role" value="Architect"><span>An architect</span></label>
+          <label><input type="radio" name="role" value="Interior designer"><span>An interior designer</span></label>
+          <label><input type="radio" name="role" value="Builder"><span>A builder</span></label>
+        </div>
+      </fieldset>
+      <fieldset><legend>The project</legend>
+        <div class="chips">
+          <label><input type="radio" name="stage" value="Existing system" checked><span>Existing home</span></label>
+          <label><input type="radio" name="stage" value="Renovation"><span>Renovation</span></label>
+          <label><input type="radio" name="stage" value="New construction"><span>New construction</span></label>
+        </div>
+      </fieldset>
+      <fieldset><legend>Also interested in</legend>
+        <div class="chips">
+          <label><input type="checkbox" name="also" value="Lighting control"><span>Lighting control</span></label>
+          <label><input type="checkbox" name="also" value="Audio &amp; video"><span>Audio &amp; video</span></label>
+          <label><input type="checkbox" name="also" value="Wi-Fi &amp; networks"><span>Wi-Fi &amp; networks</span></label>
+          <label><input type="checkbox" name="also" value="Home theater"><span>Home theater</span></label>
+        </div>
+      </fieldset>
+      <label class="full">Tell us about your windows<textarea name="message" rows="5" placeholder="Rooms, number of windows, timeline, who else is on the team"></textarea></label>
+      <label class="hp" aria-hidden="true">Leave this empty<input name="company_website" tabindex="-1" autocomplete="off"></label>
+      <div class="ts-slot full"></div>
+      <div class="full"><button class="btn btn-dark" type="submit">Request Consultation</button></div>
+      <p class="form-note" role="status"></p>
       <p class="fine">Your request goes directly to our team at Home Technology Experts. We never sell your information.</p>
-    </div>
+    </form>
   </div>
 </section>
 </main>
@@ -441,12 +491,89 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 // Close mobile menu after a tap
 document.querySelectorAll('.nav ul a').forEach(a=>a.addEventListener('click',()=>a.closest('ul').classList.remove('open')));
 
-// Zoho Forms reports its height via postMessage ("perma|height"); size the iframe to fit
-addEventListener('message',e=>{
-  if(!/zoho|hteny\.com/.test(e.origin)||typeof e.data!=='string')return;
-  const h=parseInt(e.data.split('|')[1],10);
-  if(h>0)document.getElementById('zf').style.height=(h+20)+'px';
-});
+// Lead form, ported from the HLD site. Sends to the Catalyst lead service as brand HMS.
+(function () {
+  var f = document.querySelector('form.lead');
+  if (!f) return;
+  var note = f.querySelector('.form-note');
+  var endpoint = f.dataset.endpoint, sitekey = f.dataset.sitekey;
+  var started = Date.now();
+  var CALL = '631.446.1000';
+
+  // Remember campaign tags from the landing page for this visit
+  try {
+    var q = new URLSearchParams(location.search), keep = {};
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function (k) { if (q.get(k)) keep[k] = q.get(k); });
+    if (Object.keys(keep).length) sessionStorage.setItem('hms_utm', JSON.stringify(keep));
+    if (!sessionStorage.getItem('hms_ref')) sessionStorage.setItem('hms_ref', document.referrer || '');
+  } catch (e) {}
+
+  if (endpoint && sitekey) {
+    f.querySelector('.ts-slot').innerHTML = '<div class="cf-turnstile" data-sitekey="' + sitekey + '" data-appearance="interaction-only" data-theme="light"></div>';
+    var s = document.createElement('script');
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'; s.async = true; s.defer = true;
+    document.head.appendChild(s);
+  }
+
+  function fieldError(name, msg) {
+    var el = f.elements[name];
+    if (!el) return;
+    el.setAttribute('aria-invalid', 'true');
+    var lab = el.closest('label');
+    if (lab && !lab.querySelector('.err')) { var e = document.createElement('span'); e.className = 'err'; e.textContent = msg; lab.appendChild(e); }
+  }
+  function clearErrors() {
+    f.querySelectorAll('.err').forEach(function (e) { e.remove(); });
+    f.querySelectorAll('[aria-invalid]').forEach(function (e) { e.removeAttribute('aria-invalid'); });
+  }
+
+  f.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    clearErrors();
+    var fd = new FormData(f), data = Object.fromEntries(fd.entries());
+    var bad = false;
+    if (!String(data.first_name || '').trim()) { fieldError('first_name', 'Please add your first name.'); bad = true; }
+    if (!String(data.last_name || '').trim()) { fieldError('last_name', 'Please add your last name.'); bad = true; }
+    if (!/.+@.+\..+/.test(data.email || '')) { fieldError('email', 'Please add a valid email.'); bad = true; }
+    if (bad) { note.textContent = ''; return; }
+    if (!endpoint) { note.textContent = 'Preview only: this form is not connected yet, so nothing was sent.'; return; }
+
+    // The lead service has no field for these, so they ride along in the message
+    var also = fd.getAll('also');
+    delete data.also;
+    data.message = '[Hamptons Motorized Shades website] Motorized shades' + (also.length ? '; also interested in ' + also.join(', ') : '') + (data.message ? '\n\n' + data.message : '');
+
+    var utm = {}; try { utm = JSON.parse(sessionStorage.getItem('hms_utm') || '{}'); } catch (e) {}
+    data.brand = f.dataset.brand;
+    data.started_at = started;
+    // Page address plus campaign tags only; other query values stay out of the CRM
+    var u = new URL(location.href), keepQ = new URLSearchParams();
+    u.searchParams.forEach(function (v, k) { if (k.indexOf('utm_') === 0) keepQ.set(k, v); });
+    data.page = u.origin + u.pathname + (keepQ.toString() ? '?' + keepQ : '');
+    try { data.referrer = sessionStorage.getItem('hms_ref') || ''; } catch (e) {}
+    Object.assign(data, utm);
+
+    var btn = f.querySelector('button[type=submit]');
+    btn.disabled = true; note.textContent = 'Sending…';
+    // Someone who autofills and clicks at once is held briefly so the server's minimum fill time never flags them
+    var wait = Math.max(0, 3500 - (Date.now() - started));
+    new Promise(function (r) { setTimeout(r, wait); })
+      .then(function () { return fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: JSON.stringify(data) }); })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { status: r.status, j: j }; }); })
+      .then(function (res) {
+        if (res.status === 200 && res.j.ok) {
+          f.innerHTML = '<div class="thanks full"><h2>Thank you.</h2><p>We have your note and will be in touch within one business day. If it is urgent, call us on <a href="tel:+16314461000">' + CALL + '</a>.</p></div>';
+          return;
+        }
+        btn.disabled = false;
+        if (res.status === 400 && res.j.fields) { Object.keys(res.j.fields).forEach(function (k) { fieldError(k, res.j.fields[k]); }); note.textContent = ''; return; }
+        if (res.status === 429) { note.textContent = 'We have had several messages from this connection. Please call us on ' + CALL + '.'; return; }
+        if (res.status === 403) { note.textContent = 'We could not verify the form. Please try again, or call ' + CALL + '.'; if (window.turnstile) window.turnstile.reset(); return; }
+        note.textContent = 'Something went wrong on our side. Please try again, or call ' + CALL + '.';
+      })
+      .catch(function () { btn.disabled = false; note.textContent = 'We could not reach the server. Please try again, or call ' + CALL + '.'; });
+  });
+})();
 document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
 </body>
