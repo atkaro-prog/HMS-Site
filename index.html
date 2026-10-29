@@ -11,12 +11,26 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
+  "@type": "Service",
   "name": "Hamptons Motorized Shades",
-  "description": "Custom motorized shades, drapery and exterior screens for Hamptons homes.",
+  "serviceType": "Motorized shades, drapery and exterior screens",
+  "description": "Custom motorized shades, drapery and exterior screens for Hamptons homes, designed, installed and supported by Home Technology Experts.",
   "areaServed": ["Southampton","East Hampton","Bridgehampton","Sag Harbor","Montauk","Westhampton Beach","Amagansett","Water Mill","Sagaponack","Shelter Island"],
-  "telephone": "+1-631-000-0000",
-  "email": "hello@hamptonsmotorizedshades.com"
+  "provider": {
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Home Technology Experts",
+    "url": "https://hteny.com",
+    "telephone": "+1-631-446-1000",
+    "email": "sales@hteny.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "241 County Rd 39A, Unit 4",
+      "addressLocality": "Southampton",
+      "addressRegion": "NY",
+      "postalCode": "11968",
+      "addressCountry": "US"
+    }
+  }
 }
 </script>
 <style>
@@ -132,6 +146,28 @@ header.scrolled{background:rgba(245,240,232,.94);backdrop-filter:blur(8px);paddi
 .gallery img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
 .gallery figure:hover img{transform:scale(1.04)}
 
+/* HTE family */
+.hte{background:var(--ink);color:var(--linen)}
+.hte h2{color:var(--white)}
+.hte .eyebrow{color:var(--stone)}
+.hte p{color:var(--stone)}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.12);margin-top:50px;border:1px solid rgba(255,255,255,.12)}
+.svc a{background:var(--ink);padding:30px 26px;transition:background .3s;display:flex;flex-direction:column;gap:8px}
+.svc a:hover{background:var(--ocean)}
+.svc h3{color:var(--white);font-size:1.4rem}
+.svc p{font-size:.88rem}
+.svc span{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-top:auto}
+.hte .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
+.btn-light{border-color:var(--linen);color:var(--white)}
+.btn-light:hover{background:var(--white);color:var(--ink)}
+fieldset{border:0;grid-column:1/-1}
+legend{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--driftwood);margin-bottom:10px}
+.checks{display:flex;flex-wrap:wrap;gap:10px 22px}
+.checks label{display:flex;align-items:center;gap:8px;font-size:.92rem;letter-spacing:0;text-transform:none;color:var(--ink);margin:0}
+.checks input{width:auto;accent-color:var(--ocean)}
+.fine{font-size:.78rem;color:var(--driftwood);grid-column:1/-1}
+.err{display:none;color:#8a3b2b;font-size:.9rem;grid-column:1/-1}
+
 /* Process */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;margin-top:50px}
 .step{border-top:1px solid var(--ink);padding-top:24px}
@@ -182,6 +218,7 @@ footer .logo{color:var(--white)}
   .band .wrap{grid-template-columns:1fr 1fr}
   .scene-wrap .scene{position:relative;left:auto;bottom:auto;width:auto;margin:-60px 20px 0}
   .gallery{grid-template-columns:1fr 1fr}
+  .svc{grid-template-columns:1fr 1fr}
   .gallery figure:first-child{grid-column:1/-1;aspect-ratio:16/10}
   section{padding:80px 0}
 }
@@ -190,7 +227,7 @@ footer .logo{color:var(--white)}
   .nav ul.open{display:flex}
   .nav ul li{padding:12px 0;border-bottom:1px solid var(--linen)}
   .menu-btn{display:block}
-  .grid,.steps,form,.gallery{grid-template-columns:1fr}
+  .grid,.steps,form,.gallery,.svc{grid-template-columns:1fr}
   .gallery figure{aspect-ratio:4/3}
   .feature{height:60vh}
   .window-ctrl{right:10px;bottom:10px}
@@ -202,7 +239,7 @@ footer .logo{color:var(--white)}
 
 <header id="top">
   <div class="wrap nav">
-    <a href="#" class="logo">Hamptons Motorized Shades<small>Light, Perfected</small></a>
+    <a href="#" class="logo">Hamptons Motorized Shades<small>by Home Technology Experts</small></a>
     <button class="menu-btn" aria-label="Open menu" onclick="document.querySelector('.nav ul').classList.toggle('open')">Menu</button>
     <ul>
       <li><a href="#collections">Collections</a></li>
@@ -336,10 +373,30 @@ footer .logo{color:var(--white)}
   </div>
 </section>
 
+<section class="hte" id="hte">
+  <div class="wrap">
+    <div class="head reveal" style="margin-bottom:0">
+      <div><div class="eyebrow">Home Technology Experts</div><h2>Shades are just <em style="color:var(--stone)">the beginning.</em></h2></div>
+      <p>Hamptons Motorized Shades is the window-treatment studio of Home Technology Experts, the East End&rsquo;s integrator for lighting, audio, networking and whole-home control. One team designs it, installs it and supports it, so your shades, lights and music work together from day one.</p>
+    </div>
+    <div class="svc reveal">
+      <a href="https://hteny.com/lighting-controls"><h3>Lighting Control</h3><p>Keypads and scenes that dim the lights and lower the shades together.</p><span>Explore &rarr;</span></a>
+      <a href="https://hteny.com/audio-video"><h3>Audio &amp; Video</h3><p>Invisible speakers, outdoor sound and TVs that disappear.</p><span>Explore &rarr;</span></a>
+      <a href="https://hteny.com/home-networks"><h3>Home Networks</h3><p>Reliable Wi-Fi from the primary suite to the pool house.</p><span>Explore &rarr;</span></a>
+      <a href="https://hteny.com/hamptons-home-theaters"><h3>Home Theaters</h3><p>Dedicated cinemas and media rooms, blackout shades included.</p><span>Explore &rarr;</span></a>
+    </div>
+    <div class="ctas reveal">
+      <a href="https://hteny.com/experience-center" class="btn btn-light">Visit Our Southampton Showroom</a>
+      <a href="https://hteny.com" class="btn btn-light">Discover HTE</a>
+    </div>
+  </div>
+</section>
+
 <section id="faq">
   <div class="wrap">
     <div class="reveal" style="text-align:center"><div class="eyebrow">Questions</div><h2>Frequently <em>asked.</em></h2></div>
     <div class="faq reveal">
+      <details><summary>Who is behind Hamptons Motorized Shades?</summary><p>We&rsquo;re part of Home Technology Experts, a Southampton-based integrator serving the East End and Manhattan. Your shades are designed, installed, programmed and supported by the same in-house team that handles HTE&rsquo;s lighting, audio and smart-home projects.</p></details>
       <details><summary>Can motorized shades be added to an existing home?</summary><p>Yes. Battery-powered and plug-in motors make retrofits clean and simple, with no need to open walls. For renovations and new construction we coordinate hardwired solutions with your electrician.</p></details>
       <details><summary>How long do battery motors last?</summary><p>Most modern battery systems run one to three years between charges or battery changes, depending on how often the shades move.</p></details>
       <details><summary>Will they work with my smart-home system?</summary><p>We integrate with leading platforms including Lutron, Control4, Savant, Apple Home and Alexa, as well as simple wall keypads and handheld remotes.</p></details>
@@ -355,28 +412,52 @@ footer .logo{color:var(--white)}
       <div class="eyebrow">Contact</div>
       <h2>Let&rsquo;s design <em>your light.</em></h2>
       <p>Tell us a little about your home and we&rsquo;ll be in touch to schedule a complimentary design consultation.</p>
-      <p><a href="tel:+16310000000">(631) 000-0000</a><br><a href="mailto:hello@hamptonsmotorizedshades.com">hello@hamptonsmotorizedshades.com</a></p>
-      <p>Serving the Hamptons &amp; the East End of Long Island</p>
+      <p><a href="tel:+16314461000">631.446.1000</a><br><a href="mailto:sales@hteny.com">sales@hteny.com</a></p>
+      <p><strong style="font-weight:500">HTE Southampton Showroom</strong><br>241 County Rd 39A, Unit 4<br>Southampton, NY 11968</p>
     </div>
-    <form class="reveal" id="form">
-      <div><label for="n">Name</label><input id="n" required></div>
-      <div><label for="p">Phone</label><input id="p" type="tel"></div>
-      <div class="full"><label for="e">Email</label><input id="e" type="email" required></div>
-      <div><label for="t">Town</label><input id="t"></div>
+    <!-- Posts to Zoho Forms "HTE - HTML Contact Form", which feeds HTE's Zoho CRM -->
+    <form class="reveal" id="form" method="POST" accept-charset="UTF-8" target="zf_sink"
+      action="https://forms.zohopublic.com/hometechnologyexperts/form/ContactHTENEWHTMLVERSION/formperma/AaIdkOvikzGbAmtWiKBB870l_dtMfDo24zV_sCWtWJI/htmlRecords/submit">
+      <input type="hidden" name="zf_referrer_name" value="">
+      <input type="hidden" name="zf_redirect_url" value="">
+      <input type="hidden" name="zc_gad" value="">
+      <input type="hidden" name="Address_Region" value="NY">
+      <input type="hidden" name="Address_Country" value="United States">
+      <input type="hidden" name="Checkbox" value="Motorized Shades">
+      <input type="hidden" name="MultiLine" id="ml">
+      <div><label for="fn">First Name</label><input id="fn" name="Name_First" autocomplete="given-name" required></div>
+      <div><label for="ln">Last Name</label><input id="ln" name="Name_Last" autocomplete="family-name" required></div>
+      <div><label for="e">Email</label><input id="e" name="Email" type="email" autocomplete="email" required></div>
+      <div><label for="p">Phone</label><input id="p" name="PhoneNumber_countrycode" type="tel" autocomplete="tel" pattern="[\d\s().+-]{7,20}" required></div>
+      <div><label for="t">Town</label><input id="t" name="Address_City" autocomplete="address-level2"></div>
       <div><label for="s">Project</label>
         <select id="s"><option>Existing home</option><option>Renovation</option><option>New construction</option><option>Trade partner</option></select></div>
+      <div class="full"><label for="h">How did you find us?</label>
+        <select id="h" name="Dropdown" required><option value="" disabled selected>Select one</option><option>Internet Search</option><option>Referral</option><option>Social Media</option><option>Print/Digital Ad</option><option>Manufacturer Website</option><option>Event</option></select></div>
+      <fieldset><legend>Also interested in</legend>
+        <div class="checks">
+          <label><input type="checkbox" name="Checkbox" value="Lighting Control &amp; Automation">Lighting control</label>
+          <label><input type="checkbox" name="Checkbox" value="Audio &amp; Video Systems">Audio &amp; video</label>
+          <label><input type="checkbox" name="Checkbox" value="Wired &amp; Wireless Networks">Wi-Fi &amp; networks</label>
+          <label><input type="checkbox" name="Checkbox" value="Home Theater">Home theater</label>
+        </div>
+      </fieldset>
       <div class="full"><label for="m">Tell us about your windows</label><textarea id="m"></textarea></div>
       <div class="full"><button class="btn btn-dark" type="submit">Request Consultation</button></div>
-      <p class="thanks">Thank you &mdash; we&rsquo;ll be in touch shortly.</p>
+      <p class="fine">Your request goes directly to our team at Home Technology Experts. We never sell your information.</p>
+      <p class="err" role="alert">Something went wrong sending your request. Please call 631.446.1000 or email sales@hteny.com.</p>
+      <p class="thanks" role="status">Thank you &mdash; we&rsquo;ll be in touch shortly.</p>
     </form>
+    <iframe name="zf_sink" id="zf_sink" title="Form submission" hidden></iframe>
   </div>
 </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <div><div class="logo">Hamptons Motorized Shades<small>Light, Perfected</small></div></div>
-    <div>&copy; <span id="yr"></span> Hamptons Motorized Shades. All rights reserved.</div>
+    <div><div class="logo">Hamptons Motorized Shades<small>by Home Technology Experts</small></div>
+      <p style="margin-top:18px;line-height:1.8">241 County Rd 39A, Unit 4, Southampton, NY 11968<br><a href="tel:+16314461000">631.446.1000</a> &middot; <a href="mailto:sales@hteny.com">sales@hteny.com</a></p></div>
+    <div style="text-align:right">A <a href="https://hteny.com" style="color:var(--white);border-bottom:1px solid var(--driftwood)">Home Technology Experts</a> company<br>&copy; <span id="yr"></span> Home Technology Experts. All rights reserved.</div>
   </div>
 </footer>
 
@@ -398,11 +479,23 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 // Close mobile menu after a tap
 document.querySelectorAll('.nav ul a').forEach(a=>a.addEventListener('click',()=>a.closest('ul').classList.remove('open')));
 
-// Form placeholder: wire to Zoho Forms / CRM web-to-lead before launch
-document.getElementById('form').addEventListener('submit',e=>{
-  e.preventDefault();
-  e.target.querySelectorAll('div').forEach(d=>d.style.display='none');
-  e.target.querySelector('.thanks').style.display='block';
+// Contact form posts to Zoho Forms through a hidden iframe so the visitor stays on the page.
+// The message is tagged so HMS leads can be told apart from HTE website leads in the CRM.
+const form=document.getElementById('form'),sink=document.getElementById('zf_sink');
+let sent=false;
+form.addEventListener('submit',()=>{
+  const project=document.getElementById('s').value,msg=document.getElementById('m').value.trim();
+  document.getElementById('ml').value=`[Hamptons Motorized Shades website] Project: ${project}`+(msg?`\n\n${msg}`:'');
+  form.zf_referrer_name.value=location.href;
+  form.querySelector('button').disabled=true;
+  sent=true;
+  setTimeout(()=>{if(sent){form.querySelector('.err').style.display='block';form.querySelector('button').disabled=false;sent=false}},15000);
+});
+sink.addEventListener('load',()=>{
+  if(!sent)return;
+  sent=false;
+  form.querySelectorAll('div,fieldset,.fine,.err').forEach(d=>d.style.display='none');
+  form.querySelector('.thanks').style.display='block';
 });
 document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
