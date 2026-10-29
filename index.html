@@ -160,13 +160,8 @@ header.scrolled{background:rgba(245,240,232,.94);backdrop-filter:blur(8px);paddi
 .hte .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
 .btn-light{border-color:var(--linen);color:var(--white)}
 .btn-light:hover{background:var(--white);color:var(--ink)}
-fieldset{border:0;grid-column:1/-1}
-legend{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--driftwood);margin-bottom:10px}
-.checks{display:flex;flex-wrap:wrap;gap:10px 22px}
-.checks label{display:flex;align-items:center;gap:8px;font-size:.92rem;letter-spacing:0;text-transform:none;color:var(--ink);margin:0}
-.checks input{width:auto;accent-color:var(--ocean)}
-.fine{font-size:.78rem;color:var(--driftwood);grid-column:1/-1}
-.err{display:none;color:#8a3b2b;font-size:.9rem;grid-column:1/-1}
+.zf-wrap iframe{width:100%;height:1500px;border:0;background:var(--white);display:block}
+.zf-wrap .fine{margin-top:12px;font-size:.78rem;color:var(--driftwood)}
 
 /* Process */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;margin-top:50px}
@@ -192,13 +187,7 @@ details p{margin-top:12px;color:#4a5659}
 
 /* Contact */
 .contact{background:var(--linen)}
-form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-form .full{grid-column:1/-1}
-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--driftwood);display:block;margin-bottom:6px}
-input,select,textarea{width:100%;font:300 1rem var(--sans);padding:14px 0;border:0;border-bottom:1px solid var(--driftwood);background:transparent;color:var(--ink);outline:none;border-radius:0}
-input:focus,select:focus,textarea:focus{border-color:var(--ink)}
-textarea{min-height:110px;resize:vertical}
-.thanks{display:none;font-family:var(--serif);font-size:1.6rem;grid-column:1/-1}
+.contact .info{position:sticky;top:110px}
 .info p{margin-bottom:18px}
 .info a{border-bottom:1px solid var(--stone)}
 
@@ -227,7 +216,7 @@ footer .logo{color:var(--white)}
   .nav ul.open{display:flex}
   .nav ul li{padding:12px 0;border-bottom:1px solid var(--linen)}
   .menu-btn{display:block}
-  .grid,.steps,form,.gallery,.svc{grid-template-columns:1fr}
+  .grid,.steps,.gallery,.svc{grid-template-columns:1fr}
   .gallery figure{aspect-ratio:4/3}
   .feature{height:60vh}
   .window-ctrl{right:10px;bottom:10px}
@@ -415,40 +404,13 @@ footer .logo{color:var(--white)}
       <p><a href="tel:+16314461000">631.446.1000</a><br><a href="mailto:sales@hteny.com">sales@hteny.com</a></p>
       <p><strong style="font-weight:500">HTE Southampton Showroom</strong><br>241 County Rd 39A, Unit 4<br>Southampton, NY 11968</p>
     </div>
-    <!-- Posts to Zoho Forms "HTE - HTML Contact Form", which feeds HTE's Zoho CRM -->
-    <form class="reveal" id="form" method="POST" accept-charset="UTF-8" target="zf_sink"
-      action="https://forms.zohopublic.com/hometechnologyexperts/form/ContactHTENEWHTMLVERSION/formperma/AaIdkOvikzGbAmtWiKBB870l_dtMfDo24zV_sCWtWJI/htmlRecords/submit">
-      <input type="hidden" name="zf_referrer_name" value="">
-      <input type="hidden" name="zf_redirect_url" value="">
-      <input type="hidden" name="zc_gad" value="">
-      <input type="hidden" name="Address_Region" value="NY">
-      <input type="hidden" name="Address_Country" value="United States">
-      <input type="hidden" name="Checkbox" value="Motorized Shades">
-      <input type="hidden" name="MultiLine" id="ml">
-      <div><label for="fn">First Name</label><input id="fn" name="Name_First" autocomplete="given-name" required></div>
-      <div><label for="ln">Last Name</label><input id="ln" name="Name_Last" autocomplete="family-name" required></div>
-      <div><label for="e">Email</label><input id="e" name="Email" type="email" autocomplete="email" required></div>
-      <div><label for="p">Phone</label><input id="p" name="PhoneNumber_countrycode" type="tel" autocomplete="tel" pattern="[\d\s().+-]{7,20}" required></div>
-      <div><label for="t">Town</label><input id="t" name="Address_City" autocomplete="address-level2"></div>
-      <div><label for="s">Project</label>
-        <select id="s"><option>Existing home</option><option>Renovation</option><option>New construction</option><option>Trade partner</option></select></div>
-      <div class="full"><label for="h">How did you find us?</label>
-        <select id="h" name="Dropdown" required><option value="" disabled selected>Select one</option><option>Internet Search</option><option>Referral</option><option>Social Media</option><option>Print/Digital Ad</option><option>Manufacturer Website</option><option>Event</option></select></div>
-      <fieldset><legend>Also interested in</legend>
-        <div class="checks">
-          <label><input type="checkbox" name="Checkbox" value="Lighting Control &amp; Automation">Lighting control</label>
-          <label><input type="checkbox" name="Checkbox" value="Audio &amp; Video Systems">Audio &amp; video</label>
-          <label><input type="checkbox" name="Checkbox" value="Wired &amp; Wireless Networks">Wi-Fi &amp; networks</label>
-          <label><input type="checkbox" name="Checkbox" value="Home Theater">Home theater</label>
-        </div>
-      </fieldset>
-      <div class="full"><label for="m">Tell us about your windows</label><textarea id="m"></textarea></div>
-      <div class="full"><button class="btn btn-dark" type="submit">Request Consultation</button></div>
+    <!-- Embeds Zoho Forms "HTE - Contact Form" (the form hteny.com uses), which feeds HTE's Zoho CRM.
+         Motorized Shades is pre-checked; Zoho records this page as the Referrer Name. -->
+    <div class="zf-wrap reveal">
+      <iframe id="zf" title="Request a consultation" loading="lazy" allow="camera"
+        src="https://forms.hteny.com/hometechnologyexperts/form/HamptonsLandscapeLightingTest/formperma/-jlCFyBaD3U-sW74GbcQn5gCA2FRJU-vaFKjUEWvg5s?zf_rszfm=1&amp;Checkbox=Motorized%20Shades"></iframe>
       <p class="fine">Your request goes directly to our team at Home Technology Experts. We never sell your information.</p>
-      <p class="err" role="alert">Something went wrong sending your request. Please call 631.446.1000 or email sales@hteny.com.</p>
-      <p class="thanks" role="status">Thank you &mdash; we&rsquo;ll be in touch shortly.</p>
-    </form>
-    <iframe name="zf_sink" id="zf_sink" title="Form submission" hidden></iframe>
+    </div>
   </div>
 </section>
 </main>
@@ -479,23 +441,11 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 // Close mobile menu after a tap
 document.querySelectorAll('.nav ul a').forEach(a=>a.addEventListener('click',()=>a.closest('ul').classList.remove('open')));
 
-// Contact form posts to Zoho Forms through a hidden iframe so the visitor stays on the page.
-// The message is tagged so HMS leads can be told apart from HTE website leads in the CRM.
-const form=document.getElementById('form'),sink=document.getElementById('zf_sink');
-let sent=false;
-form.addEventListener('submit',()=>{
-  const project=document.getElementById('s').value,msg=document.getElementById('m').value.trim();
-  document.getElementById('ml').value=`[Hamptons Motorized Shades website] Project: ${project}`+(msg?`\n\n${msg}`:'');
-  form.zf_referrer_name.value=location.href;
-  form.querySelector('button').disabled=true;
-  sent=true;
-  setTimeout(()=>{if(sent){form.querySelector('.err').style.display='block';form.querySelector('button').disabled=false;sent=false}},15000);
-});
-sink.addEventListener('load',()=>{
-  if(!sent)return;
-  sent=false;
-  form.querySelectorAll('div,fieldset,.fine,.err').forEach(d=>d.style.display='none');
-  form.querySelector('.thanks').style.display='block';
+// Zoho Forms reports its height via postMessage ("perma|height"); size the iframe to fit
+addEventListener('message',e=>{
+  if(!/zoho|hteny\.com/.test(e.origin)||typeof e.data!=='string')return;
+  const h=parseInt(e.data.split('|')[1],10);
+  if(h>0)document.getElementById('zf').style.height=(h+20)+'px';
 });
 document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
