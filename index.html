@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hamptons Motorized Shades | Custom Motorized Window Treatments</title>
+<meta name="description" content="Custom motorized shades, drapery and exterior screens for Hamptons homes. Design consultation, precision measuring, white-glove installation and smart-home integration from Westhampton to Montauk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Hamptons Motorized Shades",
+  "description": "Custom motorized shades, drapery and exterior screens for Hamptons homes.",
+  "areaServed": ["Southampton","East Hampton","Bridgehampton","Sag Harbor","Montauk","Westhampton Beach","Amagansett","Water Mill","Sagaponack","Shelter Island"],
+  "telephone": "+1-631-000-0000",
+  "email": "hello@hamptonsmotorizedshades.com"
+}
+</script>
+<style>
+:root{
+  --sand:#f5f0e8; --linen:#ebe3d6; --stone:#cfc4b2; --driftwood:#8a7a66;
+  --ink:#1f2a2e; --ocean:#2f4a52; --tide:#56737a; --white:#fffdf9;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Inter",system-ui,sans-serif;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--sand);line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--driftwood);font-weight:500}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;color:var(--ink)}
+h1{font-size:clamp(2.6rem,6vw,4.8rem)}
+h2{font-size:clamp(2rem,4vw,3.2rem);margin:.4rem 0 1.2rem}
+h3{font-size:1.6rem;margin-bottom:.5rem}
+em{font-style:italic;color:var(--tide)}
+p{max-width:62ch}
+section{padding:110px 0}
+.btn{display:inline-block;padding:15px 30px;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;border:1px solid var(--ink);transition:.3s}
+.btn-dark{background:var(--ink);color:var(--white)}
+.btn-dark:hover{background:var(--ocean);border-color:var(--ocean)}
+.btn-ghost:hover{background:var(--ink);color:var(--white)}
+
+/* Nav */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.35s;padding:22px 0}
+header.scrolled{background:rgba(245,240,232,.94);backdrop-filter:blur(8px);padding:14px 0;box-shadow:0 1px 0 var(--stone)}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--serif);font-size:1.45rem;letter-spacing:.04em;line-height:1}
+.logo small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--driftwood);margin-top:4px}
+.nav ul{display:flex;gap:34px;list-style:none;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}
+.nav ul a{position:relative}
+.nav ul a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--ink);transition:.3s}
+.nav ul a:hover::after{width:100%}
+.menu-btn{display:none;background:none;border:0;font:inherit;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;color:var(--ink)}
+
+/* Hero */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:60px;padding-top:120px}
+.hero p{font-size:1.1rem;margin:1.6rem 0 2.4rem;color:#3d4a4e}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.window{position:relative;aspect-ratio:4/5;background:var(--white);padding:18px;box-shadow:0 30px 60px -30px rgba(31,42,46,.35)}
+.pane{position:relative;height:100%;overflow:hidden;background:linear-gradient(180deg,#bcd3d6 0%,#dfe7e2 46%,#e9dcc4 47%,#d9c8a8 62%,#7d9aa0 63%,#56737a 100%)}
+.pane::before{content:"";position:absolute;width:90px;height:90px;border-radius:50%;background:#fbf1dc;top:18%;right:22%;box-shadow:0 0 80px 30px rgba(251,241,220,.7)}
+.mullion{position:absolute;background:var(--white);z-index:3}
+.mullion.v{width:10px;top:0;bottom:0;left:calc(50% - 5px)}
+.mullion.h{height:10px;left:0;right:0;top:calc(50% - 5px)}
+.shade{position:absolute;left:0;right:0;top:0;z-index:2;height:8%;background:repeating-linear-gradient(0deg,#e8dfd0 0 3px,#e2d8c7 3px 6px);box-shadow:0 6px 18px rgba(0,0,0,.18);transition:height 2.4s cubic-bezier(.65,0,.35,1)}
+.shade::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:8px;background:#b9ab94}
+.window-ctrl{position:absolute;right:-22px;bottom:40px;z-index:5;background:var(--ink);color:var(--white);padding:14px 16px;display:flex;flex-direction:column;gap:8px;box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.window-ctrl button{background:none;border:1px solid rgba(255,255,255,.3);color:var(--white);font:500 .66rem var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:8px 12px;cursor:pointer;transition:.25s}
+.window-ctrl button:hover,.window-ctrl button.on{background:var(--white);color:var(--ink)}
+
+/* Intro band */
+.band{background:var(--ink);color:var(--linen);padding:70px 0}
+.band .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+.band strong{display:block;font-family:var(--serif);font-weight:400;font-size:2.6rem;color:var(--white);line-height:1}
+.band span{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--stone)}
+
+/* Collections */
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:60px;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{background:var(--white);padding:0 0 34px;transition:.35s;border:1px solid transparent}
+.card:hover{transform:translateY(-6px);border-color:var(--stone);box-shadow:0 26px 50px -30px rgba(31,42,46,.3)}
+.swatch{height:200px;margin-bottom:28px;position:relative;overflow:hidden}
+.card h3,.card p{padding:0 30px}
+.card p{font-size:.95rem;color:#4a5659}
+.s1{background:repeating-linear-gradient(0deg,#e9e1d3 0 4px,#e3d9c8 4px 8px)}
+.s2{background:linear-gradient(90deg,#d8cbb6 0,#efe7da 14%,#d8cbb6 28%,#efe7da 42%,#d8cbb6 56%,#efe7da 70%,#d8cbb6 84%,#efe7da 100%)}
+.s3{background:repeating-linear-gradient(45deg,#5d6b6c 0 2px,#6f7d7e 2px 5px)}
+.s4{background:#2a3336}
+.s4::after{content:"";position:absolute;inset:auto 0 0 0;height:18%;background:#3a4549}
+.s5{background:repeating-linear-gradient(0deg,#f2ede4 0 18px,#e6dccb 18px 20px)}
+.s6{background:radial-gradient(circle at 30% 30%,#fbf1dc,transparent 40%),linear-gradient(180deg,#9fbcc1,#56737a)}
+
+/* Split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.alt{background:var(--linen)}
+.list{list-style:none;margin-top:30px;border-top:1px solid var(--stone)}
+.list li{padding:20px 0;border-bottom:1px solid var(--stone);display:grid;grid-template-columns:40px 1fr;gap:10px}
+.list li b{font-family:var(--serif);font-weight:400;font-size:1.3rem;color:var(--driftwood)}
+.list h4{font-weight:500;font-size:.95rem;margin-bottom:2px}
+.list p{font-size:.92rem;color:#4a5659}
+.scene{background:var(--white);padding:40px;box-shadow:0 30px 60px -35px rgba(31,42,46,.4)}
+.scene .row{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--linen);font-size:.92rem}
+.scene .row:last-child{border:0}
+.scene .t{font-family:var(--serif);font-size:1.25rem}
+.scene .lvl{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--driftwood)}
+.bar{width:110px;height:4px;background:var(--linen);position:relative;margin-left:16px}
+.bar i{position:absolute;inset:0 auto 0 0;background:var(--tide)}
+.brands{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.brands span{border:1px solid var(--stone);padding:8px 14px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;margin-top:50px}
+.step{border-top:1px solid var(--ink);padding-top:24px}
+.step .n{font-family:var(--serif);font-size:3rem;color:var(--stone);line-height:1}
+.step p{font-size:.93rem;color:#4a5659}
+
+/* Areas */
+.areas{background:var(--ocean);color:var(--linen);text-align:center}
+.areas h2{color:var(--white)}
+.areas p{margin:0 auto;color:var(--stone)}
+.towns{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 34px;margin-top:40px;font-family:var(--serif);font-size:1.5rem;color:var(--white)}
+.towns span{opacity:.88}
+
+/* FAQ */
+.faq{max-width:820px;margin:40px auto 0}
+details{border-bottom:1px solid var(--stone);padding:24px 0}
+summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:1.4rem;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--sans);font-weight:300;transition:.3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:12px;color:#4a5659}
+
+/* Contact */
+.contact{background:var(--linen)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+form .full{grid-column:1/-1}
+label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--driftwood);display:block;margin-bottom:6px}
+input,select,textarea{width:100%;font:300 1rem var(--sans);padding:14px 0;border:0;border-bottom:1px solid var(--driftwood);background:transparent;color:var(--ink);outline:none;border-radius:0}
+input:focus,select:focus,textarea:focus{border-color:var(--ink)}
+textarea{min-height:110px;resize:vertical}
+.thanks{display:none;font-family:var(--serif);font-size:1.6rem;grid-column:1/-1}
+.info p{margin-bottom:18px}
+.info a{border-bottom:1px solid var(--stone)}
+
+footer{background:var(--ink);color:var(--stone);padding:60px 0 40px;font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-end}
+footer .logo{color:var(--white)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:960px){
+  .hero,.split{grid-template-columns:1fr;gap:50px}
+  .hero{padding-top:130px;min-height:auto;padding-bottom:60px}
+  .window{max-width:440px;margin:0 auto 0 0}
+  .grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .band .wrap{grid-template-columns:1fr 1fr}
+  section{padding:80px 0}
+}
+@media (max-width:720px){
+  .nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--sand);padding:10px 24px 20px;box-shadow:0 10px 20px -10px rgba(0,0,0,.2)}
+  .nav ul.open{display:flex}
+  .nav ul li{padding:12px 0;border-bottom:1px solid var(--linen)}
+  .menu-btn{display:block}
+  .grid,.steps,form{grid-template-columns:1fr}
+  .window-ctrl{right:10px;bottom:10px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#" class="logo">Hamptons Motorized Shades<small>Light, Perfected</small></a>
+    <button class="menu-btn" aria-label="Open menu" onclick="document.querySelector('.nav ul').classList.toggle('open')">Menu</button>
+    <ul>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#smart">Smart Living</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<section class="wrap hero">
+  <div class="reveal">
+    <div class="eyebrow">Custom Motorized Window Treatments · East End</div>
+    <h1>Effortless light,<br><em>from sunrise to sunset.</em></h1>
+    <p>Custom motorized shades, drapery and exterior screens for Hamptons homes. Designed around your architecture, tailored to every window, and quietly choreographed to the way you live.</p>
+    <div class="ctas">
+      <a href="#contact" class="btn btn-dark">Book a Consultation</a>
+      <a href="#collections" class="btn btn-ghost">Explore Collections</a>
+    </div>
+  </div>
+  <div class="window reveal" aria-label="Animated illustration of a motorized shade over an ocean view">
+    <div class="pane">
+      <div class="shade" id="shade"></div>
+      <div class="mullion v"></div><div class="mullion h"></div>
+    </div>
+    <div class="window-ctrl" role="group" aria-label="Try the shade">
+      <button data-h="8" class="on">Open</button>
+      <button data-h="52">Glare</button>
+      <button data-h="100">Close</button>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <div><strong>Whisper</strong><span>Quiet Motors</span></div>
+    <div><strong>1/16"</strong><span>Precision Fit</span></div>
+    <div><strong>One Touch</strong><span>Whole-Home Control</span></div>
+    <div><strong>Local</strong><span>East End Service</span></div>
+  </div>
+</div>
+
+<section id="collections">
+  <div class="wrap">
+    <div class="head reveal">
+      <div><div class="eyebrow">Collections</div><h2>Tailored for every <em>window.</em></h2></div>
+      <p>From soaring great-room glass to the primary suite, we specify the right fabric, opacity and hardware for each space &mdash; then hide the technology so only the beauty remains.</p>
+    </div>
+    <div class="grid">
+      <article class="card reveal"><div class="swatch s1"></div><h3>Roller Shades</h3><p>Clean, architectural lines in sheer, light-filtering and blackout fabrics. Perfect for expansive glass and modern interiors.</p></article>
+      <article class="card reveal"><div class="swatch s2"></div><h3>Motorized Drapery</h3><p>Ripplefold and pinch-pleat draperies that glide open at a touch &mdash; softness and drama, without the tug.</p></article>
+      <article class="card reveal"><div class="swatch s3"></div><h3>Exterior Screens</h3><p>Retractable solar and insect screens for porches, pergolas and pool houses. Cooler afternoons, uninterrupted views.</p></article>
+      <article class="card reveal"><div class="swatch s4"></div><h3>Blackout &amp; Sleep</h3><p>Side-channel blackout systems for bedrooms and media rooms that seal out early summer sunrises.</p></article>
+      <article class="card reveal"><div class="swatch s5"></div><h3>Roman &amp; Woven</h3><p>Tailored Roman folds and natural woven textures that bring warmth to coastal, traditional and shingle-style homes.</p></article>
+      <article class="card reveal"><div class="swatch s6"></div><h3>Skylights &amp; Specialty</h3><p>Hard-to-reach skylights, clerestories and angled windows, finally under control and protected from fading.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="smart" class="alt">
+  <div class="wrap split">
+    <div class="reveal">
+      <div class="eyebrow">Smart Living</div>
+      <h2>Your home, <em>on its own schedule.</em></h2>
+      <p>Shades that rise with the morning light, lower to protect art and furnishings in the afternoon, and close for privacy at dusk &mdash; automatically, whether you&rsquo;re home for the summer or away for the season.</p>
+      <ul class="list">
+        <li><b>i.</b><div><h4>Protect what you love</h4><p>Filter UV to preserve floors, fabrics and fine art from the intense coastal sun.</p></div></li>
+        <li><b>ii.</b><div><h4>Comfort &amp; efficiency</h4><p>Reduce solar heat gain in summer and hold warmth in winter for a calmer HVAC load.</p></div></li>
+        <li><b>iii.</b><div><h4>Privacy &amp; security</h4><p>Lived-in schedules while you&rsquo;re away, and instant privacy with a single scene.</p></div></li>
+        <li><b>iv.</b><div><h4>Safe for families</h4><p>Cordless by design &mdash; no dangling cords for children or pets.</p></div></li>
+      </ul>
+      <div class="brands"><span>Lutron</span><span>Somfy</span><span>Control4</span><span>Savant</span><span>Apple Home</span><span>Alexa</span></div>
+    </div>
+    <div class="scene reveal" aria-label="Example scene settings">
+      <div class="eyebrow" style="margin-bottom:10px">Scene · Golden Hour</div>
+      <div class="row"><span class="t">Great Room</span><span style="display:flex;align-items:center"><span class="lvl">Sheer 40%</span><span class="bar"><i style="width:40%"></i></span></span></div>
+      <div class="row"><span class="t">Kitchen</span><span style="display:flex;align-items:center"><span class="lvl">Open</span><span class="bar"><i style="width:0"></i></span></span></div>
+      <div class="row"><span class="t">Primary Suite</span><span style="display:flex;align-items:center"><span class="lvl">Drapery 70%</span><span class="bar"><i style="width:70%"></i></span></span></div>
+      <div class="row"><span class="t">Pool Pergola</span><span style="display:flex;align-items:center"><span class="lvl">Screen Down</span><span class="bar"><i style="width:100%"></i></span></span></div>
+      <div class="row"><span class="t">Media Room</span><span style="display:flex;align-items:center"><span class="lvl">Blackout</span><span class="bar"><i style="width:100%"></i></span></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="reveal"><div class="eyebrow">Our Process</div><h2>Considered from <em>first visit to final touch.</em></h2></div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">01</div><h3>Consult</h3><p>An in-home design visit to understand your light, views, privacy needs and style &mdash; with fabric samples in hand.</p></div>
+      <div class="step reveal"><div class="n">02</div><h3>Measure</h3><p>Precision measuring and power planning, coordinated with your architect, designer or builder when needed.</p></div>
+      <div class="step reveal"><div class="n">03</div><h3>Install</h3><p>White-glove installation with concealed wiring or long-life battery motors, leaving your home spotless.</p></div>
+      <div class="step reveal"><div class="n">04</div><h3>Program</h3><p>Scenes, schedules and smart-home integration, followed by a walkthrough and ongoing local support.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="areas">
+  <div class="wrap reveal">
+    <div class="eyebrow" style="color:var(--stone)">Service Area</div>
+    <h2>Proudly serving the <em style="color:var(--stone)">East End.</em></h2>
+    <p>New construction, renovations and existing homes &mdash; for homeowners, designers, architects and builders.</p>
+    <div class="towns"><span>Westhampton</span><span>Southampton</span><span>Water Mill</span><span>Bridgehampton</span><span>Sagaponack</span><span>Sag Harbor</span><span>East Hampton</span><span>Amagansett</span><span>Montauk</span><span>Shelter Island</span></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center"><div class="eyebrow">Questions</div><h2>Frequently <em>asked.</em></h2></div>
+    <div class="faq reveal">
+      <details><summary>Can motorized shades be added to an existing home?</summary><p>Yes. Battery-powered and plug-in motors make retrofits clean and simple, with no need to open walls. For renovations and new construction we coordinate hardwired solutions with your electrician.</p></details>
+      <details><summary>How long do battery motors last?</summary><p>Most modern battery systems run one to three years between charges or battery changes, depending on how often the shades move.</p></details>
+      <details><summary>Will they work with my smart-home system?</summary><p>We integrate with leading platforms including Lutron, Control4, Savant, Apple Home and Alexa, as well as simple wall keypads and handheld remotes.</p></details>
+      <details><summary>How long does a project take?</summary><p>Most projects move from consultation to installation in a matter of weeks, depending on fabric selection and scope. We&rsquo;re happy to plan around your season and arrival dates.</p></details>
+      <details><summary>Do you work with designers and builders?</summary><p>Absolutely. We partner with architects, interior designers and builders from early planning through final programming to make sure pockets, power and fabrics are right the first time.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap split" style="align-items:start">
+    <div class="info reveal">
+      <div class="eyebrow">Contact</div>
+      <h2>Let&rsquo;s design <em>your light.</em></h2>
+      <p>Tell us a little about your home and we&rsquo;ll be in touch to schedule a complimentary design consultation.</p>
+      <p><a href="tel:+16310000000">(631) 000-0000</a><br><a href="mailto:hello@hamptonsmotorizedshades.com">hello@hamptonsmotorizedshades.com</a></p>
+      <p>Serving the Hamptons &amp; the East End of Long Island</p>
+    </div>
+    <form class="reveal" id="form">
+      <div><label for="n">Name</label><input id="n" required></div>
+      <div><label for="p">Phone</label><input id="p" type="tel"></div>
+      <div class="full"><label for="e">Email</label><input id="e" type="email" required></div>
+      <div><label for="t">Town</label><input id="t"></div>
+      <div><label for="s">Project</label>
+        <select id="s"><option>Existing home</option><option>Renovation</option><option>New construction</option><option>Trade partner</option></select></div>
+      <div class="full"><label for="m">Tell us about your windows</label><textarea id="m"></textarea></div>
+      <div class="full"><button class="btn btn-dark" type="submit">Request Consultation</button></div>
+      <p class="thanks">Thank you &mdash; we&rsquo;ll be in touch shortly.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><div class="logo">Hamptons Motorized Shades<small>Light, Perfected</small></div></div>
+    <div>&copy; <span id="yr"></span> Hamptons Motorized Shades. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+const header=document.getElementById('top');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>30),{passive:true});
+
+// Interactive shade demo, with a gentle auto-play until the visitor takes over
+const shade=document.getElementById('shade'),btns=[...document.querySelectorAll('.window-ctrl button')];
+let touched=false,i=0;
+function setShade(b){btns.forEach(x=>x.classList.toggle('on',x===b));shade.style.height=b.dataset.h+'%'}
+btns.forEach(b=>b.addEventListener('click',()=>{touched=true;setShade(b)}));
+const auto=setInterval(()=>{if(touched)return clearInterval(auto);i=(i+1)%btns.length;setShade(btns[i])},3200);
+
+// Scroll reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Close mobile menu after a tap
+document.querySelectorAll('.nav ul a').forEach(a=>a.addEventListener('click',()=>a.closest('ul').classList.remove('open')));
+
+// Form placeholder: wire to Zoho Forms / CRM web-to-lead before launch
+document.getElementById('form').addEventListener('submit',e=>{
+  e.preventDefault();
+  e.target.querySelectorAll('div').forEach(d=>d.style.display='none');
+  e.target.querySelector('.thanks').style.display='block';
+});
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
